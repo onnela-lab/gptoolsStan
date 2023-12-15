@@ -12,4 +12,4 @@ build :
 
 check : build
 	mkdir -p check
-	cd check && R CMD check ../build/*.tar.gz
+	cd check && R CMD check --as-cran ../build/*.tar.gz

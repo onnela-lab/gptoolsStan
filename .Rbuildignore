@@ -6,3 +6,5 @@ LICENSE
 Makefile
 .github
 .vscode
+^build$
+^check$

@@ -45,8 +45,6 @@ length_scale <- n / 10
 freq <- 1:(n %/% 2 + 1) - 1
 # See appendix B of https://arxiv.org/abs/2301.08836 for details on the expression.
 cov_rfft <- exp(- 2 * (pi * freq * length_scale / n) ^ 2) + 1e-9
-print(freq)
-cov_rfft
 ```
 
 Let's obtain prior realization by sampling from the model.

@@ -8,3 +8,6 @@ Makefile
 .vscode
 ^build$
 ^check$
+^CRAN-SUBMISSION$
+^cran-comments\.md$
+

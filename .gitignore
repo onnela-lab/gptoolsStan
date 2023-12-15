@@ -6,3 +6,4 @@ vignettes/getting_started
 check
 .vscode
 build
+.DS_Store

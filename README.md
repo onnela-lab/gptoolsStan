@@ -5,11 +5,7 @@
 ## Getting Started
 
 1. Install `cmdstanr` if you haven't already (see [here](https://mc-stan.org/cmdstanr/#installation) for details).
-2. Install this package by running
-```r
-install.packages("remotes")
-remotes::install_github("onnela-lab/gptoolsStan")
-```
+2. Install this package by running `install.packages("gptoolsStan")`.
 3. Compile your first model.
 ```r
 library(cmdstanr)

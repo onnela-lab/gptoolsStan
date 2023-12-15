@@ -1,0 +1,8 @@
+.Rproj.user
+*.Rproj
+inst/doc
+vignettes/getting_started
+*.html
+check
+.vscode
+build

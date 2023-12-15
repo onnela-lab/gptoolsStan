@@ -3,3 +3,5 @@
 ^\.Rproj\.user$
 ^vignettes/getting_started$
 Makefile
+.github
+.vscode

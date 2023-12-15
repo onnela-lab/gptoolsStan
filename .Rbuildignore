@@ -2,6 +2,7 @@
 ^R-package\.Rproj$
 ^\.Rproj\.user$
 ^vignettes/getting_started$
+LICENSE
 Makefile
 .github
 .vscode

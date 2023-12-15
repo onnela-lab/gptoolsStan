@@ -20,4 +20,6 @@ Suggests:
     knitr,
     rmarkdown,
     cmdstanr
+Additional_repositories:
+    https://mc-stan.org/r-packages/
 VignetteBuilder: knitr

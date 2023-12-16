@@ -3,7 +3,6 @@
 inst/doc
 vignettes/getting_started
 *.html
-check
 .vscode
 build
 .DS_Store

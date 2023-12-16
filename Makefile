@@ -1,15 +1,17 @@
-.PHONY : build check man vignettes
+.PHONY : build clean
 
-vignettes/getting_started.html : vignettes/getting_started.Rmd vignettes/getting_started.stan
-	Rscript -e "devtools::build_rmd('$<')"
+build : build/gptoolsStan
 
-man :
+build/gptoolsStan :
+# Update documentation.
 	Rscript -e 'devtools::document()'
+# Clean up an potential previous builds and create a clean directory.
+	rm -rf build && mkdir -p build
+# Build, check, and extract the package.
+	cd build \
+		&& NOT_CRAN=true R CMD build .. \
+		&& R CMD check --as-cran *.tar.gz \
+		&& tar -xf *.tar.gz
 
-build :
-	mkdir -p build
-	cd build && R CMD build ..
-
-check : build
-	mkdir -p check
-	cd check && R CMD check --as-cran ../build/*.tar.gz
+clean :
+	rm -rf build

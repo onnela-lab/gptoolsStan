@@ -1,6 +1,6 @@
 .PHONY : build clean
 
-build :
+build : clean
 	Rscript -e 'devtools::document()'
 	rm -f *.tar.gz
 	NOT_CRAN=true R CMD build .

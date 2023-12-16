@@ -5,8 +5,8 @@
 Makefile
 .github
 .vscode
-^build$
-^check$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
 ^LICENSE\.md$
+^gptoolsStan\.Rcheck$
+^.*?\.tar\.gz$

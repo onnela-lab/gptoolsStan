@@ -1,15 +1,7 @@
-.PHONY : build check man vignettes
-
-vignettes/getting_started.html : vignettes/getting_started.Rmd vignettes/getting_started.stan
-	Rscript -e "devtools::build_rmd('$<')"
-
-man :
-	Rscript -e 'devtools::document()'
+.PHONY : build
 
 build :
-	mkdir -p build
-	cd build && R CMD build ..
-
-check : build
-	mkdir -p check
-	cd check && R CMD check --as-cran ../build/*.tar.gz
+	Rscript -e 'devtools::document()'
+	rm -f *.tar.gz
+	NOT_CRAN=true R CMD build .
+	R CMD check --as-cran *.tar.gz

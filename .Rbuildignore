@@ -10,4 +10,3 @@ Makefile
 ^check$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
-

@@ -9,3 +9,4 @@ vignettes/getting_started
 build
 .DS_Store
 CRAN-SUBMISSION
+.Rhistory

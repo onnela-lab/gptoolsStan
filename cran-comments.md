@@ -1,5 +1,7 @@
 # Revisions in response to comments from 2023-12-18 for resubmission of 0.1.0.
 
+Thank you for the comments. Please find point-by-point responses below. Code changes are available at https://github.com/onnela-lab/gptoolsStan/pull/4.
+
 > Please always write package names, software names and API (application programming interface) names in single quotes in title and description. e.g: --> 'Stan' Please note that package names are case sensitive.
 
 We have wrapped 'Stan' and 'cmdstanr' in single quotes.

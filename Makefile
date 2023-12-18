@@ -1,4 +1,4 @@
-.PHONY : build clean
+.PHONY : build clean submit
 
 build : clean
 	Rscript -e 'devtools::document()'
@@ -8,3 +8,7 @@ build : clean
 
 clean :
 	rm -rf *.Rcheck *.tar.gz
+
+submit : clean
+	echo "Start submission by typing 'devtools::submit_cran()'"
+	NOT_CRAN=true R

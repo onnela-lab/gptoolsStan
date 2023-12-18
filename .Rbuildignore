@@ -10,3 +10,4 @@ Makefile
 ^LICENSE\.md$
 ^gptoolsStan\.Rcheck$
 ^.*?\.tar\.gz$
+^playground$

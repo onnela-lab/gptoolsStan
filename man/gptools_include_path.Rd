@@ -2,10 +2,25 @@
 % Please edit documentation in R/model.R
 \name{gptools_include_path}
 \alias{gptools_include_path}
-\title{Get the gptools include path for compiling Stan programs with \code{cmdstanr}.}
+\title{Get the 'gptoolsStan' include path for compiling 'Stan' programs.}
 \usage{
 gptools_include_path()
 }
+\value{
+Path to the directory containing source files for 'gptoolsStan' as characters.
+}
 \description{
-Get the gptools include path for compiling Stan programs with \code{cmdstanr}.
+Get the 'gptoolsStan' include path for compiling 'Stan' programs.
+}
+\examples{
+\dontrun{
+library(cmdstanr)
+library(gptoolsStan)
+
+# Compile the model with paths set up to include 'Stan' sources from 'gptoolsStan'.
+model <- cmdstan_model(
+  stan_file="/path/to/your/model.stan",
+  include_paths=gptools_include_path(),
+)
+}
 }

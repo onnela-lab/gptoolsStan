@@ -19,8 +19,8 @@ library(gptoolsStan)
 
 # Compile the model with paths set up to include 'Stan' sources from 'gptoolsStan'.
 model <- cmdstan_model(
-  stan_file="/path/to/your/model.stan",
-  include_paths=gptools_include_path(),
+    stan_file = "/path/to/your/model.stan",
+    include_paths = gptools_include_path(),
 )
 }
 }

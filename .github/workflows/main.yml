@@ -7,13 +7,11 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-env:
-  cmdstanVersion: "2.31.0"
-
 jobs:
   build:
     name: Build
     strategy:
+      fail-fast: false
       matrix:
         runner:
           - ubuntu-latest
@@ -28,6 +26,6 @@ jobs:
         with:
           extra-packages: |
             any::rcmdcheck
-            cmdstanr=url::https://mc-stan.org/r-packages/src/contrib/cmdstanr_0.7.0.tar.gz
+            cmdstanr=url::https://stan-dev.r-universe.dev/src/contrib/cmdstanr_0.8.1.tar.gz
           needs: check
       - uses: r-lib/actions/check-r-package@v2

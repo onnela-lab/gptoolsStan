@@ -140,7 +140,7 @@ Evaluate the log absolute determinant of the Jacobian associated with
     Fourier transform :code:`cov_rfft2`).
 :returns: Log absolute determinant of the Jacobian.
 */
-real gp_rfft2_log_abs_det_jacobian(matrix cov_rfft2, int width) {
+real gp_rfft2_log_abs_det_jac(matrix cov_rfft2, int width) {
     int height = rows(cov_rfft2);
     int n = width * height;
     int fftwidth = width %/% 2 + 1;
@@ -171,6 +171,9 @@ real gp_rfft2_log_abs_det_jacobian(matrix cov_rfft2, int width) {
     ladj += - log2() * nterms + n * log(n) / 2;
     return ladj;
 }
+real gp_rfft2_log_abs_det_jacobian(matrix cov_rfft2, int width) {
+    reject("`gp_rfft2_log_abs_det_jacobian` has been renamed to `gp_rfft2_log_abs_det_jac` to comply with upcoming changes (see https://github.com/stan-dev/stanc3/issues/1470 for details).");
+}
 
 
 /**
@@ -185,7 +188,7 @@ Evaluate the log probability of a two-dimensional Gaussian process realization i
 */
 real gp_rfft2_lpdf(matrix y, matrix loc, matrix cov_rfft2) {
     return std_normal_lpdf(to_vector(gp_rfft2(y, loc, cov_rfft2)))
-        + gp_rfft2_log_abs_det_jacobian(cov_rfft2, cols(y));
+        + gp_rfft2_log_abs_det_jac(cov_rfft2, cols(y));
 }
 
 

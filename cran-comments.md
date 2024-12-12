@@ -1,3 +1,8 @@
+# Submission of version 0.2.0.
+
+This submission adds functionality to specify different length scales in different dimensions for Gaussian processes on graphs.
+
+
 # Revisions in response to comments from 2023-12-18 for resubmission of 0.1.0.
 
 Thank you for the comments. Please find point-by-point responses below. Code changes are available at https://github.com/onnela-lab/gptoolsStan/pull/4.

@@ -7,9 +7,6 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-env:
-  cmdstanVersion: "2.36.0"
-
 jobs:
   build:
     name: Build

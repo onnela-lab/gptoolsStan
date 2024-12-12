@@ -75,10 +75,13 @@ Evaluate the log absolute determinant of the Jacobian associated with
 :param n: Size of the real signal. Necessary because the size cannot be inferred from :code:`rfft`.
 :returns: Log absolute determinant of the Jacobian.
 */
-real gp_rfft_log_abs_det_jacobian(vector cov_rfft, int n) {
+real gp_rfft_log_abs_det_jac(vector cov_rfft, int n) {
     vector[n %/% 2 + 1] rfft_scale = gp_evaluate_rfft_scale(cov_rfft, n);
     return - sum(log(rfft_scale[1:n %/% 2 + 1])) -sum(log(rfft_scale[2:(n + 1) %/% 2]))
         - log(2) * ((n - 1) %/% 2) + n * log(n) / 2;
+}
+real gp_rfft_log_abs_det_jacobian(vector cov_rfft, int n) {
+    reject("`gp_rfft_log_abs_det_jacobian` has been renamed to `gp_rfft_log_abs_det_jac` to comply with upcoming changes (see https://github.com/stan-dev/stanc3/issues/1470 for details).");
 }
 
 
@@ -94,7 +97,7 @@ real gp_rfft_lpdf(vector y, vector loc, vector cov_rfft) {
     int n = size(y);
     int nrfft = n %/% 2 + 1;
     vector[n] z = gp_rfft(y, loc, cov_rfft);
-    return std_normal_lpdf(z) + gp_rfft_log_abs_det_jacobian(cov_rfft, n);
+    return std_normal_lpdf(z) + gp_rfft_log_abs_det_jac(cov_rfft, n);
 }
 
 
